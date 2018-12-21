@@ -86,18 +86,6 @@ body {
   color: #D5D5D5;
 }
 
-.carousel {
-  margin-bottom: 20px;
-}
-
-.carousel-caption {
-  text-transform: uppercase;
-  transform: translateY(-100%);
-  top: 50%;
-  right: 60%;
-  color: #000;
-}
-
 #chaiz {
   width: 290px;
   height: 231px;
