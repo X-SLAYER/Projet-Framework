@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
     var duration = 500;
 
@@ -62,8 +60,6 @@ function OpenError() {
     }
 }
 
-
-
 function verification() {
     var date = document.getElementById("date").value;
     var selected = document.getElementById("nbp").value;
@@ -73,7 +69,6 @@ function verification() {
     var phone = document.getElementById("tel").value;
     var plat = $("input[type='checkbox']:checked");
     var totalp = 0;
-
 
     if (selected == "-1") {
         $('#error').text('Veuillez sélectionner le nombre de places')
@@ -86,7 +81,6 @@ function verification() {
         return;
     }
 
-
     if (checked != null) {
         if (checked == "mme") {
             checked = "Madame";
@@ -97,8 +91,8 @@ function verification() {
         }
     }
     else {
-         $('#error').text("Civilité est obligatoire !");
-         OpenError();
+        $('#error').text("Saiaise Le Civilité !");
+        OpenError();
         return;
     }
 
@@ -109,8 +103,8 @@ function verification() {
             }
         }
         if (count == nom.length) {
-             $('#error').text("Nom : Eurreur Remove chiffres");
-             OpenError();
+            $('#error').text("Nom : Eurreur Remove chiffres");
+            OpenError();
             return;
         }
 
@@ -124,14 +118,14 @@ function verification() {
     if (phone.length == 8) {
         for (var i = 0; i < phone.length; i++) {
             if (!((phone[i] >= 0) && (phone[i] <= 9))) {
-                 $('#error').text("Tel : N de tel invalide !! ");
-                 OpenError();
+                $('#error').text("Tel : N de tel invalide !! ");
+                OpenError();
                 return;
             }
         }
     } else {
-         $('#error').text("Tel : 8 chiffres sont nessesaires ");
-         OpenError();
+        $('#error').text("Tel : 8 chiffres sont nessesaires ");
+        OpenError();
         return;
     }
 
@@ -144,8 +138,8 @@ function verification() {
         });
         result += "</ul>";
     } else {
-         $('#error').text("Il Vous Saiaisr Au Moins Une Plat !!");
-         OpenError();
+        $('#error').text("Il Vous Saiaisr Au Moins Une Plat !!");
+        OpenError();
         return;
     }
 
