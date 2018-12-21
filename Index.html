@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>Restaurant Iheb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='images/pizza.png' type='image/x-icon' rel='icon' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/color.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/flaticon.css">
+</head>
+
+<body>
+
+    <a href="#" class="scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="form-restaurant.html">
+                    <img src="images/pizza.png" class="img" alt="bootstrapImage" class="img-responsive">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="MyNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Contact US</a></li>
+                    <li><a href="#">Report</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--BEGIN carousel-->
+    <div id="caro" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#caro" data-slide-to="0" class="active"></li>
+            <li data-target="#caro" data-slide-to="1"></li>
+            <li data-target="#caro" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner ">
+            <div class="item active">
+                <!-- premier item du carousel -->
+                <img src="images/burger2.jpg">
+                <div class="carousel-caption">
+                    <h1 style="color:white;">Welcome to Iheb Briki's restaurant</h1>
+                </div>
+            </div>
+            <div class="item">
+                <!-- deuxieme item du carousel -->
+                <img src="images/burger1.jpg">
+
+            </div>
+            <div class="item">
+                <!-- troisième item du carousel -->
+                <img src="images/burger3.jpg">
+            </div>
+            <!--left and right moving-->
+            <a class="left carousel-control" href="#caro" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#caro" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <p class="text-justify">Ce formulaire permet de commander une table dans notre restaurant, ensuite vous pouvez
+            commande vos plats. Il faudra aussi indiquer vos coordonn&eacute;es et dans le cas de plusieurs personne,
+            indiquer le nom de chacun d'entre eux.</p>
+        <form id="form1" name="form1" method="post" action="">
+            <p class="text-justify">Table pour combien de personnes ?</p>
+            <select name="nbp" id="nbp" onchange="getSelectValue()">
+                <option value="-1">--Veuillez choisir--</option>
+                <option value="1">Une place</option>
+                <option value="2">Deux places</option>
+                <option value="4">4 places</option>
+                <option value="6">6 places</option>
+            </select>
+            <br /><br>
+            <div id="chaises">
+            </div>
+            <br />
+            <span class="text-justify">A quelle date vous allez venir ? </span>
+            <input name="date" type="date" id="date" required />
+            <br />
+
+            <hr />
+
+            <form class="form-group">
+                <h2>Vos coordon&eacute;es</h2>
+                Civilit&eacute; :
+                <input name="civilite" type="radio" value="mme" />
+                Madamme
+                <input name="civilite" type="radio" value="mlle" />
+                Mademoiselle
+                <input name="civilite" type="radio" value="m" />
+                Monsieur
+                <br /><br>
+                <label for="nom">Nom et pr&eacute;nom :</label>
+                <input class="form-control" placeholder="Enter Your nom" name="nom" type="text" id="nom" size="60"
+                    required />
+                <br />
+                <label for="tel">N&deg; de t&eacute;l&eacute;phone :</label>
+                <input class="form-control" name="tel" type="text" id="tel" placeholder="Enter Your phone" />
+                <br />
+
+                <div id="div_accompagnateurs" class="text-justify">Liste des accompagnateurs (une personne par ligne):
+                    <br /><br>
+                    <textarea class="form-control" name="accompagnateurs" cols="60" rows="4" id="accompagnateurs"></textarea>
+                    <br />
+                </div>
+            </form>
+
+
+            <hr />
+
+
+            <form class="form-group">
+                <h2>Que voulez-vous manger ? </h2>
+
+                <input name="cmd" type="checkbox" value="Salade" data-prix="5" id="s" />
+                <label for="s">Salade</label>
+                <br />
+                <input name="cmd" type="checkbox" value="Soupe" data-prix="2.5" id="sou" />
+                <label for="sou"> Soupe </label>
+                <br />
+                <input id="cous" name="cmd" type="checkbox" value="Couscous" data-prix="15.5" />
+                <label for="cous">Couscous</label>
+                <br />
+                <input id="riz" name="cmd" type="checkbox" value="Riz" data-prix="12" />
+                <label for="riz">Riz</label>
+                <br />
+                <input id="fruit" name="cmd" type="checkbox" value="Fruits" data-prix="7" />
+                <label for="fruit">Fruits </label>
+                <br />
+                <input id="gatx" name="cmd" type="checkbox" value="Gateaux" data-prix="6.4" />
+                <label for="gatx">Gateaux</label>
+            </form>
+
+            <hr />
+
+            <br />
+            <button class="btn btn-primary" name="b1" type="button" id="b1" onclick="verification()">Valider ma
+                commande</button>
+            <br />
+            <br />
+
+            <div class="mt-5" id="div_resume"></div>
+            <p>&nbsp;</p>
+
+    </div>
+</body>
+
+
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="error">Error Champs Is Required</p>
+    </div>
+
+</div>
+
+<script src="JS/main.js"></script>
+
+</html>
